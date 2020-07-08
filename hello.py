@@ -8,7 +8,7 @@ flask is the name of the module
 
 
 from flask import Flask, url_for, render_template, request, redirect, session
-from flask_session import Session
+#from flask_session import Session
 from markupsafe import escape
 import datetime
 import random
@@ -20,22 +20,20 @@ import random
 # app is the variable that reprsents the flask application
 # the __name__ argument means that I am serving the flask application from THIS file
 
-app = Flask("Hello")
+app = Flask(__name__)
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
-Session(app)
+#Session(app)
 
 
 @app.route('/')
-@app.route('/<name>')
-def index(name=None):
-    return render_template('hello.html', name=name)
+def index():
+    return render_template('hello.html')
 
 
 @app.route('/hello/')
-@app.route('/hello/<name>')
-def hello(name=None):
-    return render_template('hello.html', name=name)
+def hello():
+    return render_template('hello.html')
 
 
 @app.route('/user/<username>')
