@@ -801,6 +801,8 @@ body {
      document.getElementById("main").style.opacity = 0.3;
      document.getElementById("toggleNavButton").style.color="white"
      document.getElementById("main").addEventListener("click", disableMain, true)
+
+     document.getElementById("mySidenav").addEventListener("swipeleft", closeNav, true)
    }
 
    function closeNav() {
@@ -809,6 +811,8 @@ body {
     	document.getElementById("main").style.opacity = 1
     	document.getElementById("toggleNavButton").style.color="black"
     	document.getElementById("main").removeEventListener("click", disableMain, true)
+
+    	document.getElementById("mySidenav").removeEventListener("swipeleft", closeNav, true)
 	}
 
 	function disableMain() {
