@@ -11,6 +11,17 @@
 	   conda deactivate
 	   conda activate C:\FlaskRoot\hello\envs
        flask run --port 80
+
+       git add templates\hello.html
+       git commit -m "Chaged fonts and padding"
+       git push
+       git push heroku master
+
+
+       https://developer.mozilla.org/en-US/docs/Web/API/Touch_events/Using_Touch_Events
+       http://www.javascriptkit.com/javatutors/touchevents.shtml
+       https://www.codicode.com/art/easy_way_to_add_touch_support_to_your_website.aspx
+
     --->
 
     <!--- Image Pack URL:  https://icons8.com/icon/pack/business/offices --->
@@ -105,13 +116,13 @@ body {
   background-color: #111;
   overflow-x: hidden;
   transition: 0.5s;
-  padding-top: 30px;
+  padding-top: 65px;
 }
 
 .sidenav a {
-  padding: 8px 8px 8px 15px;
+  padding: 15px 8px 8px 15px;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 25px;
   color: #818181;
   display: block;
   transition: 0.3s;
@@ -124,9 +135,11 @@ body {
 .sidenav .closebtn {
   position: absolute;
   top: 0;
-  right: 25px;
-  font-size: 20px;
-  margin-left: 50px;
+  right: 15px;
+  font-size: 60px;
+  /* border: 1px solid; */
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
 }
 
 .traslucent {
@@ -140,7 +153,7 @@ body {
 
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+  .sidenav a {font-size: 25px;}
 }
 
 
@@ -681,6 +694,8 @@ body {
 
 	document.addEventListener('DOMContentLoaded', () => {
 
+	    document.getElementById("mySidenav").addEventListener("swipeleft", swipedLeft, true)
+
 		let currentActiveLink=document.querySelector('#navLink1')
 		let currentActivePane=document.querySelector('#menu1')
 		let currentOpenTravelImg = ""
@@ -794,15 +809,19 @@ body {
    	}
 
 
+   function swipedLeft() {
+      alert("You swiped left!");
+      closeNav()
+   }
 
    function openNav() {
-     document.getElementById("mySidenav").style.width = "160px";
-     document.getElementById("main").style.marginLeft = "160px;";
+     document.getElementById("mySidenav").style.width = "215px";
+     document.getElementById("main").style.marginLeft = "215px;";
      document.getElementById("main").style.opacity = 0.3;
      document.getElementById("toggleNavButton").style.color="white"
      document.getElementById("main").addEventListener("click", disableMain, true)
 
-     document.getElementById("mySidenav").addEventListener("swipeleft", closeNav, true)
+
    }
 
    function closeNav() {
@@ -812,7 +831,7 @@ body {
     	document.getElementById("toggleNavButton").style.color="black"
     	document.getElementById("main").removeEventListener("click", disableMain, true)
 
-    	document.getElementById("mySidenav").removeEventListener("swipeleft", closeNav, true)
+    	//document.getElementById("mySidenav").removeEventListener("swipeleft", closeNav, true)
 	}
 
 	function disableMain() {
