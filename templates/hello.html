@@ -182,18 +182,18 @@ body {
 
 
  <div id="mySidenav" class="sidenav">
-   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-   <a id="navLink1" href="#menu1"  class="nav-link active"><img src="https://img.icons8.com/offices/30/000000/home.png" alt="welcome" /><span style="vertical-align:middle">&nbsp;&nbsp;Welcome</span></a>
-   <a id="navLink2" href="#menu2"  class="nav-link"><img src="https://img.icons8.com/offices/30/000000/businesswoman.png" alt="about me" /><span style="vertical-align:middle">&nbsp;&nbsp;About Me</span></a>
-   <a id="navLink3" href="#menu3"  class="nav-link"><img src="https://img.icons8.com/offices/30/000000/resume.png" alt="experience" /><span style="vertical-align:middle">&nbsp;&nbsp;Experience</span></a>
+   <a href="javascript:void(0)" class="closebtn" id="closebtn"  onclick="closeNav()">&times;</a>
+   <a id="navLink1" href="#menu1"  class="nav-link active"><img src="https://img.icons8.com/offices/30/000000/home.png" alt="welcome" /><span id="navText1" style="vertical-align:middle">&nbsp;&nbsp;Welcome</span></a>
+   <a id="navLink2" href="#menu2"  class="nav-link"><img src="https://img.icons8.com/offices/30/000000/businesswoman.png" alt="about me" /><span id="navText1" style="vertical-align:middle">&nbsp;&nbsp;About Me</span></a>
+   <a id="navLink3" href="#menu3"  class="nav-link"><img src="https://img.icons8.com/offices/30/000000/resume.png" alt="experience" /><span id="navText1" style="vertical-align:middle">&nbsp;&nbsp;Experience</span></a>
 
 
-   <a id="navLink4" href="#menu4"  class="nav-link"><img src="https://img.icons8.com/offices/30/000000/prototype.png" alt="projects" /><span style="vertical-align:middle">&nbsp;&nbsp;Projects</span></a>
+   <a id="navLink4" href="#menu4"  class="nav-link"><img src="https://img.icons8.com/offices/30/000000/prototype.png" alt="projects" /><span id="navText1" style="vertical-align:middle">&nbsp;&nbsp;Projects</span></a>
 
 
-   <a id="navLink5" href="#menu5"  class="nav-link"><img src="https://img.icons8.com/offices/30/000000/maintenance.png" alt="skills" /><span style="vertical-align:middle">&nbsp;&nbsp;Skills</span></a>
-   <a id="navLink6" href="#menu6"  class="nav-link"><img src="https://img.icons8.com/offices/30/000000/star.png" alt="interests" /><span style="vertical-align:middle">&nbsp;&nbsp;Interests</a></span></a>
-   <a id="navLink7" href="#menu7"  class="nav-link"><img src="https://img.icons8.com/offices/30/000000/new-contact.png" alt="contact" /><span style="vertical-align:middle">&nbsp;&nbsp;Contact</span></a>
+   <a id="navLink5" href="#menu5"  class="nav-link"><img src="https://img.icons8.com/offices/30/000000/maintenance.png" alt="skills" /><span id="navText1" style="vertical-align:middle">&nbsp;&nbsp;Skills</span></a>
+   <a id="navLink6" href="#menu6"  class="nav-link"><img src="https://img.icons8.com/offices/30/000000/star.png" alt="interests" /><span id="navText1" style="vertical-align:middle">&nbsp;&nbsp;Interests</a></span></a>
+   <a id="navLink7" href="#menu7"  class="nav-link"><img src="https://img.icons8.com/offices/30/000000/new-contact.png" alt="contact" /><span id="navText1" style="vertical-align:middle">&nbsp;&nbsp;Contact</span></a>
 
 </div>
 
@@ -694,15 +694,25 @@ body {
 
 	document.addEventListener('DOMContentLoaded', () => {
 
-	    document.getElementById("mySidenav").addEventListener("swipeleft", swipedLeft, true)
+		document.getElementById("main").addEventListener('touchmove', function(ev) {
+		   if (isSideNavOpen) {
+		      closeNav()
+		   }
+		}, false);
+
 
 		let currentActiveLink=document.querySelector('#navLink1')
 		let currentActivePane=document.querySelector('#menu1')
 		let currentOpenTravelImg = ""
+		isSideNavOpen = false
 
 
 		document.querySelectorAll('.travelButton').forEach(link => {
 			link.onclick = () => {
+
+			    if (isSideNavOpen) {
+			       return
+			    }
 
 
 				let x = event.clientX;
@@ -808,11 +818,23 @@ body {
 
    	}
 
+/*
+   	function handleMainTouchEnd(ev) {
+   	   if (isSideNavOpen) {
+          console.log('in function handleMainTouchEnd:  Side Nav is open')
+   	      ev.preventDefault();
+   	      closeNav()
 
-   function swipedLeft() {
-      alert("You swiped left!");
-      closeNav()
-   }
+   	   } else {
+   	      console.log('in function handleMainTouchEnd: Side Nav is closed')
+   	   }
+
+
+   	}
+
+*/
+
+
 
    function openNav() {
      document.getElementById("mySidenav").style.width = "215px";
@@ -820,6 +842,9 @@ body {
      document.getElementById("main").style.opacity = 0.3;
      document.getElementById("toggleNavButton").style.color="white"
      document.getElementById("main").addEventListener("click", disableMain, true)
+
+
+     isSideNavOpen = true
 
 
    }
@@ -831,7 +856,8 @@ body {
     	document.getElementById("toggleNavButton").style.color="black"
     	document.getElementById("main").removeEventListener("click", disableMain, true)
 
-    	//document.getElementById("mySidenav").removeEventListener("swipeleft", closeNav, true)
+
+    	isSideNavOpen = false
 	}
 
 	function disableMain() {
