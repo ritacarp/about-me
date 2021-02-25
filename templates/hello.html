@@ -13,7 +13,8 @@
        flask run --port 80
 
        git add templates\hello.html
-       git commit -m "Chaged fonts and padding"
+       gid add static
+       git commit -m "Added Touch Move Event Handler"
        git push
        git push heroku master
 
@@ -21,6 +22,28 @@
        https://developer.mozilla.org/en-US/docs/Web/API/Touch_events/Using_Touch_Events
        http://www.javascriptkit.com/javatutors/touchevents.shtml
        https://www.codicode.com/art/easy_way_to_add_touch_support_to_your_website.aspx
+
+
+       https://swiperjs.com/get-started
+       https://swiperjs.com/
+
+       http://www.serie3.info/s3slider/index.php
+
+       http://www.pixedelic.com/plugins/camera/
+
+       --- Bootstrat carousel
+       https://www.w3schools.com/bootstrap/bootstrap_ref_js_carousel.asp
+       https://www.w3schools.com/bootstrap/bootstrap_carousel.asp
+
+       https://freefrontend.com/bootstrap-carousels/
+
+       --- This looks good
+       https://kenwheeler.github.io/slick/
+       https://github.com/kenwheeler/slick/
+       https://kenwheeler.github.io/slick/
+
+
+       https://www.w3schools.com/howto/howto_js_slideshow_gallery.asp
 
     --->
 
@@ -453,36 +476,54 @@ body {
  	                        <div class="row" style="padding-bottom:4px;">
 
 
+
+
  	                           <a id="travelButton_01" class="travelButton" data-toggle="collapse" role="button" aria-expanded="false" href="#dramatic_01" >
- 	                              <img id="travelThumbnail_01" class="rounded" style="padding-right:4px" src="/static/images/Yaffo_01_d.jpg" alt="Tel Aviv/Yaffo">
+ 	                              <div class="travelThumbnailPolaroid" >
+ 	                              <img id="travelThumbnail_01" src="/static/images/Yaffo_01_d.jpg" alt="Tel Aviv/Yaffo">
+ 	                              </div>
  	                           </a>
 
  	                           <a id="travelButton_02"  class="travelButton" data-toggle="collapse" role="button" aria-expanded="false" href="#dramatic_02" >
- 	                              <img id="travelThumbnail_02" class="rounded" style="padding-right:4px"  src="/static/images/Versailles_d.jpg" alt="Versailles">
+ 	                              <div class="travelThumbnailPolaroid"  >
+ 	                              <img id="travelThumbnail_02" src="/static/images/Versailles_d.jpg" alt="Versailles">
+ 	                              </div>
  	                           </a>
 
  	                           <a id="travelButton_03" class="travelButton" data-toggle="collapse" role="button" aria-expanded="false" href="#dramatic_03" >
+ 	                              <div class="travelThumbnailPolaroid"  >
  	                              <img id="travelThumbnail_03" class="rounded" style="padding-right:4px"  src="/static/images/TrollsInIceland_d.jpg" alt="Trolls In Iceland">
+ 	                              </div>
  	                           </a>
 
  	                           <a id="travelButton_04" class="travelButton" data-toggle="collapse" role="button" aria-expanded="false" href="#dramatic_04" >
+ 	                              <div class="travelThumbnailPolaroid"  >
  	                              <img id="travelThumbnail_04" class="rounded" style="padding-right:4px"  src="/static/images/MonaAndMe_d.jpg" alt="Mona and me">
+ 	                              </div>
  	                           </a>
 
  	                           <a id="travelButton_05" class="travelButton" data-toggle="collapse" role="button" aria-expanded="false" href="#dramatic_05" >
+ 	                              <div class="travelThumbnailPolaroid"  >
  	                              <img id="travelThumbnail_05" class="rounded" style="padding-right:4px"  src="/static/images/MiamiBeach_d.jpg" alt="Miami Beach">
+ 	                              </div>
  	                           </a>
 
  	                           <a id="travelButton_06" class="travelButton" data-toggle="collapse" role="button" aria-expanded="false" href="#dramatic_06" >
+ 	                              <div class="travelThumbnailPolaroid"  >
  	                              <img id="travelThumbnail_06" class="rounded" style="padding-right:4px"  src="/static/images/SouthBeach_d.jpg" alt="South Beach">
+ 	                              </div>
  	                           </a>
 
  	                           <a id="travelButton_07" class="travelButton" data-toggle="collapse" role="button" aria-expanded="false" href="#dramatic_07" >
+ 	                              <div class="travelThumbnailPolaroid"  >
  	                              <img id="travelThumbnail_07" class="rounded" style="padding-right:4px"  src="/static/images/RMNP_01_d.jpg" alt="Rocky Mountain National Park">
+ 	                              </div>
  	                           </a>
 
  	                           <a id="travelButton_08" class="travelButton" data-toggle="collapse" role="button" aria-expanded="false" href="#dramatic_08" >
+ 	                              <div class="travelThumbnailPolaroid"  >
  	                              <img id="travelThumbnail_08" class="rounded" style="padding-right:4px"  src="/static/images/RMNP_02_d.jpg" alt="Rocky Mountain National Park">
+ 	                              </div>
  	                           </a>
 
 
@@ -540,32 +581,46 @@ body {
 
 
  	                           <a id="travelButton_09" class="travelButton" data-toggle="collapse" role="button" aria-expanded="false" href="#dramatic_09" >
+ 	                              <div class="travelThumbnailPolaroid"  >
  	                              <img id="travelThumbnail_09" class="rounded" style="padding-right:4px" src="/static/images/EiffelTower_d.jpg" alt="Eiffel Tower">
+ 	                              </div>
  	                           </a>
 
 
  	                           <a id="travelButton_10"  class="travelButton" data-toggle="collapse" role="button" aria-expanded="false" href="#dramatic_10" >
+ 	                              <div class="travelThumbnailPolaroid"  >
  	                              <img id="travelThumbnail_10" class="rounded" style="padding-right:4px"  src="/static/images/JaffaGate_d.jpg" alt="Jaffa Gate">
+ 	                              </div>
  	                           </a>
 
  	                           <a id="travelButton_11" class="travelButton" data-toggle="collapse" role="button" aria-expanded="false" href="#dramatic_11" >
+ 	                              <div class="travelThumbnailPolaroid"  >
  	                              <img id="travelThumbnail_11" class="rounded" style="padding-right:4px"  src="/static/images/Prague_01_d.jpg" alt="Prague">
+ 	                              </div>
  	                           </a>
 
  	                           <a id="travelButton_12" class="travelButton" data-toggle="collapse" role="button" aria-expanded="false" href="#dramatic_12" >
+ 	                              <div class="travelThumbnailPolaroid"  >
  	                              <img id="travelThumbnail_12" class="rounded" style="padding-right:4px"  src="/static/images/Prague_02_d.jpg" alt="Prague">
+ 	                              </div>
  	                           </a>
 
  	                           <a id="travelButton_13" class="travelButton" data-toggle="collapse" role="button" aria-expanded="false" href="#dramatic_13" >
+ 	                              <div class="travelThumbnailPolaroid"  >
  	                              <img id="travelThumbnail_13" class="rounded" style="padding-right:4px"  src="/static/images/ViennaCityHall_d.jpg" alt="Vienna City Hall">
+ 	                              </div>
  	                           </a>
 
  	                           <a id="travelButton_14" class="travelButton" data-toggle="collapse" role="button" aria-expanded="false" href="#dramatic_14" >
+ 	                              <div class="travelThumbnailPolaroid"  >
  	                              <img id="travelThumbnail_14" class="rounded" style="padding-right:4px"  src="/static/images/WesternWall_d.jpg" alt="Western Wall">
+ 	                              </div>
  	                           </a>
 
  	                           <a id="travelButton_15" class="travelButton" data-toggle="collapse" role="button" aria-expanded="false" href="#dramatic_15" >
+ 	                              <div class="travelThumbnailPolaroid"  >
  	                              <img id="travelThumbnail_15" class="rounded" style="padding-right:4px"  src="/static/images/NotreDame_d.jpg" alt="Notre Dame">
+ 	                              </div>
  	                           </a>
  	                       </div> <!-- class="row" -->
 
@@ -728,6 +783,9 @@ body {
 				if (currentOpenTravelImg) {
 					currentOpenTravelImg.style.display = 'none';
 				}
+
+				//console.log("window.innerWidth = " + window.innerWidth)
+				//console.log("window.innerHeight = " + window.innerHeight)
 
 				let img = document.getElementById(imgID);
 				img.style.display = 'inline';
