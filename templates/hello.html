@@ -13,7 +13,7 @@
        flask run --port 80
 
        git add templates\hello.html
-       gid add static
+       git add static
        git commit -m "Added Touch Move Event Handler"
        git push
        git push heroku master
@@ -58,11 +58,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/AboutMe.css') }}">
 
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
 
 <style>
@@ -531,45 +535,53 @@ body {
 
 
  	                        <div class="polaroid" id="dramatic_01" style="display:none;">
+ 	                        <a href="#" data-rel="back" class="ui-btn ui-corner-all  ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
  	                        <p class="caption">Tel Aviv/Yaffo</p>
  	                        <img id="travelImg_01" src="/static/images/Yaffo_01.jpg" width="300" height="400" alt="Tel Aviv/Yaffo">
  	                        </div>
 
  	                        <div class="polaroid" id="dramatic_02" style="display:none;">
+ 	                        <a href="#" data-rel="back" class="ui-btn ui-corner-all  ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
  	                        <p class="caption">Versailles</p>
  	                        <img id="travelImg_02" src="/static/images/Versailles.jpg" width="300" height="400" alt="Versailles">
  	                        </div>
 
 
  	                        <div class="polaroid" id="dramatic_03" style="display:none;">
+ 	                        <a href="#" data-rel="back" class="ui-btn ui-corner-all  ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
  	                        <p class="caption">Trolls In Iceland</p>
  	                        <img id="travelImg_03" src="/static/images/TrollsInIceland.jpg" width="300" height="400" alt="Trolls In Iceland">
  	                        </div>
 
 
  	                        <div class="polaroid" id="dramatic_04" style="display:none;">
+ 	                        <a href="#" data-rel="back" class="ui-btn ui-corner-all  ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
  	                        <p class="caption">Mona and me - alone at last!</p>
  	                        <img id="travelImg_04" src="/static/images/MonaAndMe.jpg" width="300" height="400" alt="Mona And Me">
  	                        </div>
 
 
  	                        <div class="polaroid" id="dramatic_05" style="display:none;">
+ 	                        <a href="#" data-rel="back" class="ui-btn ui-corner-all  ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
  	                        <p class="caption">Miami Beach</p>
  	                        <img id="travelImg_05" src="/static/images/MiamiBeach.jpg" width="300" height="400" alt="Miami Beach">
  	                        </div>
 
  	                        <div class="polaroid" id="dramatic_06" style="display:none;">
+ 	                        <a href="#" data-rel="back" class="ui-btn ui-corner-all  ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
  	                        <p class="caption">South Beach</p>
  	                        <img id="travelImg_06" src="/static/images/SouthBeach.jpg" width="300" height="400" alt="South Beach">
  	                        </div>
 
  	                        <div class="polaroid" id="dramatic_07" style="display:none;">
+ 	                        <a href="#" data-rel="back" class="ui-btn ui-corner-all  ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
  	                        <p class="caption">Rocky Mountain National Park</p>
  	                        <img id="travelImg_07" src="/static/images/RMNP_01.jpg" width="300" height="400" alt="Rocky Mountain National Park">
  	                        </div>
 
 
  	                        <div class="polaroid" id="dramatic_08" style="display:none;">
+ 	                        <a href="#" data-rel="back" class="ui-btn ui-corner-all  ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
  	                        <p class="caption">Rocky Mountain National Park</p>
  	                        <img id="travelImg_08" src="/static/images/RMNP_02.jpg" width="300" height="400" alt="Rocky Mountain National Park">
  	                        </div>
@@ -626,17 +638,20 @@ body {
 
 
  	                        <div class="polaroid" id="dramatic_09" style="display:none;">
+ 	                        <a href="#" data-rel="back" class="ui-btn ui-corner-all  ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
  	                        <p class="caption">Eiffel Tower</p>
  	                        <img id="travelImg_09" src="/static/images/EiffelTower.jpg" width="300" height="400" alt="Eiffel Tower">
  	                        </div>
 
- 	                        <div class="polaroid" id="dramatic_10" style="display:none;"> --->
+ 	                        <div class="polaroid" id="dramatic_10" style="display:none;">
+ 	                        <a href="#" data-rel="back" class="ui-btn ui-corner-all  ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
  	                        <p class="caption">Jaffa Gate</p>
  	                        <img id="travelImg_10" src="/static/images/JaffaGate.jpg" width="300" height="400" alt="Jaffa Gate">
  	                        </div>
 
 
  	                        <div class="polaroid" id="dramatic_11" style="display:none;">
+ 	                        <a href="#" data-rel="back" class="ui-btn ui-corner-all  ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
  	                        <p class="caption">Prague</p>
  	                        <img id="travelImg_11" src="/static/images/Prague_01.jpg" width="300" height="400" alt="Prague">
  	                        </div>
@@ -644,6 +659,7 @@ body {
 
 
  	                        <div class="polaroid" id="dramatic_12" style="display:none;">
+ 	                        <a href="#" data-rel="back" class="ui-btn ui-corner-all  ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
  	                        <p class="caption">Prague</p>
  	                        <img id="travelImg_12" src="/static/images/Prague_02.jpg" width="300" height="400" alt="Prague">
  	                       </div>
@@ -651,6 +667,7 @@ body {
 
 
  	                        <div class="polaroid" id="dramatic_13" style="display:none;">
+ 	                        <a href="#" data-rel="back" class="ui-btn ui-corner-all  ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
  	                        <p class="caption">Vienna City Hall</p>
  	                        <img id="travelImg_13" src="/static/images/ViennaCityHall.jpg" width="300" height="400" alt="Vienna City Hall">
  	                        </div>
@@ -658,14 +675,16 @@ body {
 
 
  	                        <div class="polaroid" id="dramatic_14" style="display:none;">
+ 	                        <a href="#" data-rel="back" class="ui-btn ui-corner-all  ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
  	                        <p class="caption">Western Wall</p>
  	                        <img id="travelImg_14" src="/static/images/WesternWall.jpg" width="300" height="400" alt="Western Wall">
  	                        </div>
 
 
  	                       <div class="polaroid" id="dramatic_15" style="display:none;">
- 	                        <p class="caption">Notre Dame</p>
- 	                        <img id="travelImg_15" src="/static/images/NotreDame.jpg" width="300" height="400" alt="Notre Dame">
+ 	                       <a href="#" data-rel="back" class="ui-btn ui-corner-all  ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+ 	                       <p class="caption">Notre Dame</p>
+ 	                       <img id="travelImg_15" src="/static/images/NotreDame.jpg" width="300" height="400" alt="Notre Dame">
  	                       </div>
 
 
@@ -814,7 +833,7 @@ body {
 
 
 
-		document.querySelectorAll('.polaroid').forEach(link => {
+		document.querySelectorAll('.ui-btn').forEach(link => {
 			link.onclick = () => {
 
 				if (currentOpenTravelImg) {
@@ -824,7 +843,7 @@ body {
 
 			}; // link.onclick
 
-		});  // document.querySelectorAll('.polaroid')
+		});  // document.querySelectorAll('.ui-btn')
 
 
 
