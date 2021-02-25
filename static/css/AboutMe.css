@@ -62,6 +62,16 @@
   box-shadow: 10px 10px 5px #aaaaaa;
 }
 
+.travelThumbnailPolaroid {
+  width: 95px;
+  padding: 10px 10px 10px 10px;
+  border: 1px solid #BFBFBF;
+  background-color: white;
+  box-shadow: 5px 5px 5px #aaaaaa;
+  margin-right:8px;
+  margin-bottom:4px;
+}
+
 
 .dramatic {
   display: none;
