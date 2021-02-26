@@ -14,7 +14,7 @@
 
        git add templates\hello.html
        git add static
-       git commit -m "Added Touch Move Event Handler"
+       git commit -m "Added Previous and Next Image navigation"
        git push
        git push heroku master
 
@@ -139,8 +139,6 @@ body {
     text-align: left;
   }
 }
-
-
 
 
 
@@ -870,18 +868,22 @@ body {
 
 
 				if (currentOpenTravelImg) {
-					currentOpenTravelImg.style.display = 'none';
+					//currentOpenTravelImg.style.display = 'none';
+					$(currentOpenTravelImg).fadeOut(2000);
 				}
 
 				//console.log("window.innerWidth = " + window.innerWidth)
 				//console.log("window.innerHeight = " + window.innerHeight)
 
 				let img = document.getElementById(imgID);
-				img.style.display = 'inline';
+				//img.style.display = 'inline';
+				$(img).fadeIn(2000);
 				img.style.position = 'absolute';
 				img.style.left = '0px';
 				img.style.top = '0px';
 				img.style.zIndex=100
+
+				//setTimeout(function(){ $(img).fadeIn(2000)}, 2000);
 
 				currentOpenTravelImg = img
 			}; // link.onclick
@@ -907,7 +909,8 @@ body {
 			link.onclick = () => {
 
 				if (currentOpenTravelImg) {
-					currentOpenTravelImg.style.display = 'none';
+					//currentOpenTravelImg.style.display = 'none';
+					$(currentOpenTravelImg).fadeOut(2000);
 				}
 				currentOpenTravelImg = ""
 
@@ -922,16 +925,20 @@ body {
 		      let goto = link.dataset.goto
 
 		      if (currentOpenTravelImg) {
-					currentOpenTravelImg.style.display = 'none';
+					//currentOpenTravelImg.style.display = 'none';
+					$(currentOpenTravelImg).fadeOut(2000);
 		      }
 		      currentOpenTravelImg = ""
 
 		      let img = document.getElementById(goto);
-		      img.style.display = 'inline';
+		      //img.style.display = 'inline';
+		      $(img).fadeIn(2000);
 		      img.style.position = 'absolute';
 		      img.style.left = '0px';
 		      img.style.top = '0px';
 		      img.style.zIndex=100
+
+		      //setTimeout(function(){ $(img).fadeIn(2000)}, 2000);
 
 		      currentOpenTravelImg = img
 
@@ -948,16 +955,20 @@ body {
 		      let goto = link.dataset.goto
 
 		      if (currentOpenTravelImg) {
-					currentOpenTravelImg.style.display = 'none';
+					//currentOpenTravelImg.style.display = 'none';
+					$(currentOpenTravelImg).fadeOut(2000);
 		      }
 		      currentOpenTravelImg = ""
 
 		      let img = document.getElementById(goto);
-		      img.style.display = 'inline';
+		      //img.style.display = 'inline';
+		      $(img).fadeIn(2000);
 		      img.style.position = 'absolute';
 		      img.style.left = '0px';
 		      img.style.top = '0px';
 		      img.style.zIndex=100
+
+		      //setTimeout(function(){ $(img).fadeIn(2000)}, 2000);
 
 		      currentOpenTravelImg = img
 
