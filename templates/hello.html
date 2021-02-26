@@ -55,18 +55,28 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/AboutMe.css') }}">
 
+    <!--- For Polaroid Close Button --->
     <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
 
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+   <!-- Latest compiled JavaScript -->
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+    <!--- For Polaroid Close Button --->
     <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
 
 
 <style>
@@ -129,6 +139,8 @@ body {
     text-align: left;
   }
 }
+
+
 
 
 
@@ -538,12 +550,20 @@ body {
  	                        <a href="#" data-rel="back" class="ui-btn ui-corner-all  ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
  	                        <p class="caption">Tel Aviv/Yaffo</p>
  	                        <img id="travelImg_01" src="/static/images/Yaffo_01.jpg" width="300" height="400" alt="Tel Aviv/Yaffo">
+ 	                        <p class="caption d-flex justify-content-between" >
+                               <a id="prev_01" data-goto="dramatic_15" href="#" data-rel="prev" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-l ui-btn-icon-notext">Prev</a>
+                               <a id="next_01" data-goto="dramatic_02" href="#" href="#" data-rel="next" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-r ui-btn-icon-notext">Next</a>
+ 	                        </p>
  	                        </div>
 
  	                        <div class="polaroid" id="dramatic_02" style="display:none;">
  	                        <a href="#" data-rel="back" class="ui-btn ui-corner-all  ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
  	                        <p class="caption">Versailles</p>
  	                        <img id="travelImg_02" src="/static/images/Versailles.jpg" width="300" height="400" alt="Versailles">
+ 	                        <p class="caption d-flex justify-content-between" >
+                               <a id="prev_02" data-goto="dramatic_01" href="#" data-rel="prev" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-l ui-btn-icon-notext">Prev</a>
+                               <a id="next_02" data-goto="dramatic_03" href="#" href="#" data-rel="next" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-r ui-btn-icon-notext">Next</a>
+ 	                        </p>
  	                        </div>
 
 
@@ -551,6 +571,10 @@ body {
  	                        <a href="#" data-rel="back" class="ui-btn ui-corner-all  ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
  	                        <p class="caption">Trolls In Iceland</p>
  	                        <img id="travelImg_03" src="/static/images/TrollsInIceland.jpg" width="300" height="400" alt="Trolls In Iceland">
+ 	                        <p class="caption d-flex justify-content-between" >
+                               <a id="prev_03" data-goto="dramatic_02" href="#" data-rel="prev" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-l ui-btn-icon-notext">Prev</a>
+                               <a id="next_03" data-goto="dramatic_04" href="#" href="#" data-rel="next" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-r ui-btn-icon-notext">Next</a>
+ 	                        </p>
  	                        </div>
 
 
@@ -558,6 +582,10 @@ body {
  	                        <a href="#" data-rel="back" class="ui-btn ui-corner-all  ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
  	                        <p class="caption">Mona and me - alone at last!</p>
  	                        <img id="travelImg_04" src="/static/images/MonaAndMe.jpg" width="300" height="400" alt="Mona And Me">
+ 	                        <p class="caption d-flex justify-content-between" >
+                               <a id="prev_04" data-goto="dramatic_03" href="#" data-rel="prev" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-l ui-btn-icon-notext">Prev</a>
+                               <a id="next_04" data-goto="dramatic_05" href="#" href="#" data-rel="next" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-r ui-btn-icon-notext">Next</a>
+ 	                        </p>
  	                        </div>
 
 
@@ -565,18 +593,30 @@ body {
  	                        <a href="#" data-rel="back" class="ui-btn ui-corner-all  ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
  	                        <p class="caption">Miami Beach</p>
  	                        <img id="travelImg_05" src="/static/images/MiamiBeach.jpg" width="300" height="400" alt="Miami Beach">
+ 	                        <p class="caption d-flex justify-content-between" >
+                               <a id="prev_05" data-goto="dramatic_04" href="#" data-rel="prev" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-l ui-btn-icon-notext">Prev</a>
+                               <a id="next_05" data-goto="dramatic_06" href="#" href="#" data-rel="next" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-r ui-btn-icon-notext">Next</a>
+ 	                        </p>
  	                        </div>
 
  	                        <div class="polaroid" id="dramatic_06" style="display:none;">
  	                        <a href="#" data-rel="back" class="ui-btn ui-corner-all  ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
  	                        <p class="caption">South Beach</p>
  	                        <img id="travelImg_06" src="/static/images/SouthBeach.jpg" width="300" height="400" alt="South Beach">
+ 	                        <p class="caption d-flex justify-content-between" >
+                               <a id="prev_06" data-goto="dramatic_05" href="#" data-rel="prev" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-l ui-btn-icon-notext">Prev</a>
+                               <a id="next_06" data-goto="dramatic_07" href="#" href="#" data-rel="next" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-r ui-btn-icon-notext">Next</a>
+ 	                        </p>
  	                        </div>
 
  	                        <div class="polaroid" id="dramatic_07" style="display:none;">
  	                        <a href="#" data-rel="back" class="ui-btn ui-corner-all  ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
  	                        <p class="caption">Rocky Mountain National Park</p>
  	                        <img id="travelImg_07" src="/static/images/RMNP_01.jpg" width="300" height="400" alt="Rocky Mountain National Park">
+ 	                        <p class="caption d-flex justify-content-between" >
+                               <a id="prev_07" data-goto="dramatic_06" href="#" data-rel="prev" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-l ui-btn-icon-notext">Prev</a>
+                               <a id="next_07" data-goto="dramatic_08" href="#" href="#" data-rel="next" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-r ui-btn-icon-notext">Next</a>
+ 	                        </p>
  	                        </div>
 
 
@@ -584,10 +624,11 @@ body {
  	                        <a href="#" data-rel="back" class="ui-btn ui-corner-all  ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
  	                        <p class="caption">Rocky Mountain National Park</p>
  	                        <img id="travelImg_08" src="/static/images/RMNP_02.jpg" width="300" height="400" alt="Rocky Mountain National Park">
+ 	                        <p class="caption d-flex justify-content-between" >
+                               <a id="prev_08" data-transition="pop" data-goto="dramatic_07" href="#" data-rel="prev" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-l ui-btn-icon-notext">Prev</a>
+                               <a id="next_08" data-transition="pop" data-goto="dramatic_09" href="#" href="#" data-rel="next" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-r ui-btn-icon-notext">Next</a>
+ 	                        </p>
  	                        </div>
-
-
-
 
  	                        <div class="row" style="padding-bottom:4px;">
 
@@ -641,12 +682,20 @@ body {
  	                        <a href="#" data-rel="back" class="ui-btn ui-corner-all  ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
  	                        <p class="caption">Eiffel Tower</p>
  	                        <img id="travelImg_09" src="/static/images/EiffelTower.jpg" width="300" height="400" alt="Eiffel Tower">
+ 	                        <p class="caption d-flex justify-content-between" >
+                               <a id="prev_09" data-goto="dramatic_08" href="#" data-rel="prev" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-l ui-btn-icon-notext">Prev</a>
+                               <a id="next_09" data-goto="dramatic_10" href="#" href="#" data-rel="next" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-r ui-btn-icon-notext">Next</a>
+ 	                        </p>
  	                        </div>
 
  	                        <div class="polaroid" id="dramatic_10" style="display:none;">
  	                        <a href="#" data-rel="back" class="ui-btn ui-corner-all  ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
  	                        <p class="caption">Jaffa Gate</p>
  	                        <img id="travelImg_10" src="/static/images/JaffaGate.jpg" width="300" height="400" alt="Jaffa Gate">
+ 	                        <p class="caption d-flex justify-content-between" >
+                               <a id="prev_10" data-goto="dramatic_09" href="#" data-rel="prev" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-l ui-btn-icon-notext">Prev</a>
+                               <a id="next_10" data-goto="dramatic_11" href="#" href="#" data-rel="next" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-r ui-btn-icon-notext">Next</a>
+ 	                        </p>
  	                        </div>
 
 
@@ -654,6 +703,10 @@ body {
  	                        <a href="#" data-rel="back" class="ui-btn ui-corner-all  ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
  	                        <p class="caption">Prague</p>
  	                        <img id="travelImg_11" src="/static/images/Prague_01.jpg" width="300" height="400" alt="Prague">
+ 	                        <p class="caption d-flex justify-content-between" >
+                               <a id="prev_11" data-goto="dramatic_10" href="#" data-rel="prev" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-l ui-btn-icon-notext">Prev</a>
+                               <a id="next_11" data-goto="dramatic_12" href="#" href="#" data-rel="next" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-r ui-btn-icon-notext">Next</a>
+ 	                        </p>
  	                        </div>
 
 
@@ -662,6 +715,10 @@ body {
  	                        <a href="#" data-rel="back" class="ui-btn ui-corner-all  ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
  	                        <p class="caption">Prague</p>
  	                        <img id="travelImg_12" src="/static/images/Prague_02.jpg" width="300" height="400" alt="Prague">
+ 	                        <p class="caption d-flex justify-content-between" >
+                               <a id="prev_12" data-goto="dramatic_11" href="#" data-rel="prev" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-l ui-btn-icon-notext">Prev</a>
+                               <a id="next_12" data-goto="dramatic_13" href="#" href="#" data-rel="next" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-r ui-btn-icon-notext">Next</a>
+ 	                        </p>
  	                       </div>
 
 
@@ -670,6 +727,10 @@ body {
  	                        <a href="#" data-rel="back" class="ui-btn ui-corner-all  ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
  	                        <p class="caption">Vienna City Hall</p>
  	                        <img id="travelImg_13" src="/static/images/ViennaCityHall.jpg" width="300" height="400" alt="Vienna City Hall">
+ 	                        <p class="caption d-flex justify-content-between" >
+                               <a id="prev_13" data-goto="dramatic_12" href="#" data-rel="prev" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-l ui-btn-icon-notext">Prev</a>
+                               <a id="next_13" data-goto="dramatic_14" href="#" href="#" data-rel="next" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-r ui-btn-icon-notext">Next</a>
+ 	                        </p>
  	                        </div>
 
 
@@ -678,6 +739,10 @@ body {
  	                        <a href="#" data-rel="back" class="ui-btn ui-corner-all  ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
  	                        <p class="caption">Western Wall</p>
  	                        <img id="travelImg_14" src="/static/images/WesternWall.jpg" width="300" height="400" alt="Western Wall">
+ 	                        <p class="caption d-flex justify-content-between" >
+                               <a id="prev_14" data-goto="dramatic_13" href="#" data-rel="prev" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-l ui-btn-icon-notext">Prev</a>
+                               <a id="next_14" data-goto="dramatic_15" href="#" href="#" data-rel="next" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-r ui-btn-icon-notext">Next</a>
+ 	                        </p>
  	                        </div>
 
 
@@ -685,6 +750,11 @@ body {
  	                       <a href="#" data-rel="back" class="ui-btn ui-corner-all  ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
  	                       <p class="caption">Notre Dame</p>
  	                       <img id="travelImg_15" src="/static/images/NotreDame.jpg" width="300" height="400" alt="Notre Dame">
+ 	                        <p class="caption d-flex justify-content-between" >
+                               <a id="prev_15" data-goto="dramatic_14" href="#" data-rel="prev" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-l ui-btn-icon-notext">Prev</a>
+                               <a id="next_01" data-goto="dramatic_01" href="#" href="#" data-rel="next" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-r ui-btn-icon-notext">Next</a>
+ 	                        </p>
+
  	                       </div>
 
 
@@ -833,7 +903,7 @@ body {
 
 
 
-		document.querySelectorAll('.ui-btn').forEach(link => {
+		document.querySelectorAll('.ui-icon-delete').forEach(link => {
 			link.onclick = () => {
 
 				if (currentOpenTravelImg) {
@@ -843,7 +913,57 @@ body {
 
 			}; // link.onclick
 
-		});  // document.querySelectorAll('.ui-btn')
+		});  // document.querySelectorAll('.ui-icon-delete')
+
+
+		document.querySelectorAll('.ui-icon-arrow-l').forEach(link => {
+		   link.onclick = () => {
+
+		      let goto = link.dataset.goto
+
+		      if (currentOpenTravelImg) {
+					currentOpenTravelImg.style.display = 'none';
+		      }
+		      currentOpenTravelImg = ""
+
+		      let img = document.getElementById(goto);
+		      img.style.display = 'inline';
+		      img.style.position = 'absolute';
+		      img.style.left = '0px';
+		      img.style.top = '0px';
+		      img.style.zIndex=100
+
+		      currentOpenTravelImg = img
+
+
+
+		   }; // link.onclick
+
+		});  // document.querySelectorAll('.ui-icon-arrow-l')
+
+
+		document.querySelectorAll('.ui-icon-arrow-r').forEach(link => {
+		   link.onclick = () => {
+
+		      let goto = link.dataset.goto
+
+		      if (currentOpenTravelImg) {
+					currentOpenTravelImg.style.display = 'none';
+		      }
+		      currentOpenTravelImg = ""
+
+		      let img = document.getElementById(goto);
+		      img.style.display = 'inline';
+		      img.style.position = 'absolute';
+		      img.style.left = '0px';
+		      img.style.top = '0px';
+		      img.style.zIndex=100
+
+		      currentOpenTravelImg = img
+
+		   }; // link.onclick
+
+		});  // document.querySelectorAll('.ui-icon-arrow-r')
 
 
 
@@ -952,14 +1072,17 @@ body {
 </script>
 
 
+
+
+
 <script>
 
 
-	$(document).ready(function(){
+$(document).ready(function(){
 		$('[data-toggle="collapse"]').collapse();
 		$('[data-toggle="tooltip"]').tooltip();
-	});
 
+	});
 
 
 	$("#moreExperience").on('show.bs.collapse', function(){
@@ -1012,6 +1135,9 @@ body {
 		});
 
 </script>
+
+
+
 
 
 </body>
