@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="col-sm-12">
+
+Thank you {{name}}<br>
+Your email is {{email}}<br>
+Your zip code is {{zip}}<br><br>
+
+{% if allBusiness %}
+Your Businesses are:<br>
+      <ul>
+        {% for n in allBusiness %}
+        <li>{{ n }}</li>
+        {% endfor %}
+      </ul>
+      <br>
+{% endif %}.
+
+<br>
+</div>
+{% endblock %}

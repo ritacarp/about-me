@@ -147,20 +147,6 @@ body {
 }
 
 
-.primaryImage {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 40%;
-}
-
-
-
-.splide__slide img {
-	width : 100%;
-	height: auto;
-}
-
 
 
 .sidenav {
@@ -258,138 +244,6 @@ body {
 
 
 <div id="main">
-
-<div id="allImages" class="splide" style="display:none;">
-
-
-
-  <div id="primary-slider" class="splide">
-    <button id="closeSlider" class="btn" style="padding-bottom:3px"><i class="fa fa-close"></i> Close</button>
-
-    <div class="splide__track">
-      <ul class="splide__list">
-        <li class="splide__slide">
-          <div class="polaroid">
-          <p class="caption">Tel Aviv/Yaffo</p>
-          <img src="/static/images/Yaffo_01.jpg"  width="320" >
-          </div>
-        </li>
-        <li class="splide__slide">
-
-          <div class="polaroid">
-          <p class="caption">Versailles</p>
-          <img src="/static/images/Versailles.jpg" width="320" >
-          </div>
-        </li>
-
-        <li class="splide__slide">
-
-          <div class="polaroid">
-          <p class="caption">Trolls In Iceland</p>
-          <img src="/static/images/TrollsInIceland.jpg" width="320" >
-          </div>
-        </li>
-
-
-        <li class="splide__slide">
-          <div class="polaroid">
-          <p class="caption">Mona and me - alone at last!</p>
-          <img src="/static/images/MonaAndMe.jpg" width="320" >
-          </div>
-        </li>
-
-
-        <li class="splide__slide">
-          <div class="polaroid">
-          <p class="caption">Miami Beach</p>
-          <img src="/static/images/MiamiBeach.jpg" width="320" >
-          </div>
-        </li>
-
-
-        <li class="splide__slide">
-          <div class="polaroid">
-          <p class="caption">South Beach</p>
-          <img src="/static/images/SouthBeach.jpg" width="320" >
-          </div>
-        </li>
-
-
-        <li class="splide__slide">
-          <div class="polaroid">
-          <p class="caption">Rocky Mountain National Park</p>
-          <img src="/static/images/RMNP_01.jpg" width="320" >
-          </div>
-        </li>
-
-        <li class="splide__slide">
-          <div class="polaroid">
-          <p class="caption">Rocky Mountain National Park</p>
-          <img src="/static/images/RMNP_02.jpg" width="320" >
-          </div>
-        </li>
-
-
-        <li class="splide__slide">
-          <div class="polaroid">
-          <p class="caption">Eiffel Tower</p>
-          <img src="/static/images/EiffelTower.jpg" width="320" >
-          </div>
-        </li>
-
-        <li class="splide__slide">
-          <div class="polaroid">
-          <p class="caption">Jaffa Gate</p>
-          <img src="/static/images/JaffaGate.jpg" width="320" >
-          </div>
-        </li>
-
-        <li class="splide__slide">
-          <div class="polaroid">
-          <p class="caption">Prague</p>
-          <img src="/static/images/Prague_01.jpg" width="320" >
-          </div>
-        </li>
-
-        <li class="splide__slide">
-          <div class="polaroid">
-          <p class="caption">Prague</p>
-          <img src="/static/images/Prague_02.jpg" width="320" >
-          </div>
-        </li>
-
-        <li class="splide__slide">
-          <div class="polaroid">
-          <p class="caption">Vienna City Hall</p>
-          <img src="/static/images/ViennaCityHall.jpg" width="320" >
-          </div>
-        </li>
-
-        <li class="splide__slide">
-          <div class="polaroid">
-          <p class="caption">Western Wall</p>
-          <img src="/static/images/WesternWall.jpg" width="320" >
-          </div>
-        </li>
-
-        <li class="splide__slide">
-          <div class="polaroid">
-          <p class="caption">Notre Dame</p>
-          <img src="/static/images/NotreDame.jpg" width="320" >
-          </div>
-        </li>
-
-
-
-      </ul>
-    </div>
-  </div>
-
-
-
-</div> <!--- class="splide" --->
-
-
 
           <span id="toggleNavButton" style="font-size:30px;cursor:pointer;vertical-align:middle;" onclick="openNav()">&#9776; </span>
           <span id="mainHeading"><img src="https://img.icons8.com/offices/30/000000/home.png" alt="welcome" />&nbsp;&nbsp;Welcome</span>
@@ -696,7 +550,6 @@ body {
  	                        </div>  <!-- class="row" -->
 
 
-                            <!---
  	                        <div class="polaroid" id="dramatic_00" style="display:none;">
  	                        <a href="#" data-rel="back" class="ui-btn ui-corner-all  ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
  	                        <p class="caption">Tel Aviv/Yaffo</p>
@@ -780,7 +633,6 @@ body {
                                <a id="next_07" data-goto="dramatic_08" href="#" href="#" data-rel="next" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-r ui-btn-icon-notext">Next</a>
  	                        </p>
  	                        </div>
- 	                        --->
 
  	                        <div class="row" style="padding-bottom:4px;">
 
@@ -829,7 +681,7 @@ body {
  	                           </a>
  	                       </div> <!-- class="row" -->
 
-                            <!---
+
  	                        <div class="polaroid" id="dramatic_08" style="display:none;">
  	                        <a href="#" data-rel="back" class="ui-btn ui-corner-all  ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
  	                        <p class="caption">Eiffel Tower</p>
@@ -908,15 +760,6 @@ body {
  	                        </p>
 
  	                       </div>
- 	                       --->
-
-
-
-
-
-
-
-
 
 
  	                     </div>  <!-- class="card-body" -->
@@ -1010,34 +853,6 @@ body {
 		maxImages = 14
 
 
-
-          // Create the main slider.
-          var primarySlider = new Splide( '#primary-slider', {
-
-
-              type:'loop',
-	          pagination : true,
-	          arrows     : true,
-	          cover      : true,
-	          focus      : 'center',
-	          perPage    : 3,
-	          breakpoints: {
-			  			600: {
-			  				perPage: 1,
-			  			}
-		}
-		//} );
-
-        } ).mount();
-
-
-
-
-
-
-
-
-
 		document.getElementById("main").addEventListener('touchmove', function(ev) {
 		   if (isSideNavOpen) {
 		      closeNav()
@@ -1046,7 +861,7 @@ body {
 
 
 
-        /*
+
 		document.querySelectorAll('.polaroid').forEach(link => {
 
 		   link.addEventListener('touchstart', function(ev) {
@@ -1117,11 +932,11 @@ body {
 
 
 		});
-        */
 
 
 
-        /*
+
+
 		document.querySelectorAll('.travelButton').forEach(link => {
 			link.onclick = () => {
 
@@ -1162,46 +977,6 @@ body {
 			}; // link.onclick
 
 		});  // document.querySelectorAll('.travelButton')
-		*/
-
-		document.querySelectorAll('.travelButton').forEach(link => {
-			link.onclick = () => {
-
-			    if (isSideNavOpen) {
-			       return
-			    }
-			    linkNumber = (link.id).replace("travelButton_", "");
-
-			    linkNumber = linkNumber * 1
-
-		   document.getElementById("allImages").style.display = 'inline';
-		   //document.getElementById("allImages").style.position = 'absolute';
-		   //document.getElementById("allImages").style.left = '0px';
-		   //document.getElementById("allImages").style.top = '0px';
-		   primarySlider.index= linkNumber;
-		   primarySlider.options = { start: linkNumber };
-		   }
-
-
-
-		});  // document.querySelectorAll('.travelButton')
-
-
-		document.getElementById("closeSlider").onclick = () => {
-
-
-		   console.log( "close Slider button clicked" );
-
-		   document.getElementById("allImages").style.display = 'none';
-
-
-
-
-		}; // document.getElementById('closeSlider')
-
-
-
-
 
 
 		document.querySelectorAll('.bookButton').forEach(link => {
@@ -1217,7 +992,7 @@ body {
 
 
 
-        /*
+
 		document.querySelectorAll('.ui-icon-delete').forEach(link => {
 			link.onclick = () => {
 
@@ -1230,10 +1005,8 @@ body {
 			}; // link.onclick
 
 		});  // document.querySelectorAll('.ui-icon-delete')
-		*/
 
 
-        /*
 		document.querySelectorAll('.ui-icon-arrow-l').forEach(link => {
 		   link.onclick = () => {
 
@@ -1262,10 +1035,8 @@ body {
 		   }; // link.onclick
 
 		});  // document.querySelectorAll('.ui-icon-arrow-l')
-		*/
 
 
-        /*
 		document.querySelectorAll('.ui-icon-arrow-r').forEach(link => {
 		   link.onclick = () => {
 
@@ -1292,7 +1063,6 @@ body {
 		   }; // link.onclick
 
 		});  // document.querySelectorAll('.ui-icon-arrow-r')
-		*/
 
 
 

@@ -1,0 +1,237 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="col-sm-12">
+  <h3> This is the start of my child template</h3>
+  <br><br>
+
+     Hi
+     {% if name %}
+        {{ name }}
+     {% endif %} !!
+     <br>
+     Today's Date is {{ currentTime.strftime("%A") }},  {{ currentTime.strftime("%B") }}  {{ currentTime.day }}, {{ currentTime.year }}
+     <br>
+     <br>
+     Your coin flip was
+     {% if headsOrTails == 1 %}
+        Heads
+     {% else %}
+        Tails
+     {% endif %}.
+
+      <ul>
+        {% for n in myFavoriteFoods %}
+        <li>{{ n }}</li>
+        {% endfor %}
+      </ul>
+      <br>
+
+
+        <!-- <form action="/feedback" method="POST" class="allegro-form"> -->
+
+        <form id="feedBackForm" action="{{ url_for('feedback') }}" method="POST" class="allegro-form">
+
+          <input type="hidden" id="allBusiness" name="allBusiness" value = "">
+          <input type="hidden" id="allInterested" name="allInterested" value = "">
+          <input type="hidden" id="allColors" name="allColors" value = "">
+
+          <h2>Please fill in all fields.</h2>
+          <p>
+            <label for="name">Your Name:</label>
+            <input id="name" type="text" name="name" placeholder="Your Full Name">
+          </p>
+          <p>
+            <label for="email">Your Email:</label>
+            <input id="emailAddress" type="text" name="emailAddress" placeholder="Valid Email Address">
+          </p>
+          <p>
+          <label for="zip code">Zip Code:</label>
+          <input id="zip" type="text" name="zip" placeholder="Your Zip Code">
+          </p>
+          <p>
+          <label for="phone">Phone:</label>
+          <input id="phone" type="text" name="phone" placeholder="Best number to reach you">
+          </p>
+
+
+          <h4>Type of Business</h4>
+
+            <table><tr>
+            <td>
+            <fieldset>
+            <ul class="types">
+
+            <li><label><input type="checkbox" value="Restaurant" name="business" />Restaurant</label></li>
+
+            <li><label><input type="checkbox" value="Hotel" name="business" />Hotel</label></li>
+
+            <li><label><input type="checkbox" value="Coffee Shop" name="business" />Coffee shop</label></li>
+
+
+            </ul></fieldset>
+
+            </td>
+
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;<td>
+
+            <td>
+            <fieldset>
+            <ul class="types">
+
+            <li><label><input type="checkbox" value="Medical Office" name="business" /> Medical Office</label></li>
+
+            <li><label><input type="checkbox" value="Hospital" name="business" /> Hospital or medical facility</label></li>
+            <li><label><input type="checkbox" value="Dental Office" name="business" /> Dental Office</label></li>
+
+            <li><label><input type="checkbox" value="School Or University" name="business"  /> School or University</label></li>
+
+
+            </ul></fieldset>
+            </td>
+
+
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;<td>
+
+            <td>
+            <fieldset>
+            <ul class="types">
+
+
+            <li><label><input type="checkbox" value="Airport Kiosk" name="business" /> Airport Kiosk</label></li>
+
+            <li><label><input type="checkbox" value="Community Center Or House Of Worship" name="business" /> House of Worship or community center</label></li>
+
+            <li><label><input type="checkbox" value="Retail Sales" name="business" /> Retail Sales</label></li>
+
+            <li><label><input type="checkbox" value="Other"  name="business"  /> Other</label></li>
+            </ul></fieldset>
+            </td>
+            </tr></table>
+
+
+
+          <p>
+
+          <h4>Interested in...(check all that apply)</h4>
+
+          <table><tr>
+            <td>
+            <fieldset>
+            <ul class="types">
+
+
+            <li><label><input type="checkbox" value="Point Of Sale Kiosk" name="interested" /> Point of sale kiosk</label></li>
+            <li><label><input type="checkbox" value="Portabl eRoom Dividers" name="interested"  /> Portable room dividers</label></li>
+            <li><label><input type="checkbox" value="Restaurant Table Separators" name="interested" /> Restaurant table separators</label></li>
+
+            </ul></fieldset>
+            </td>
+
+
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;<td>
+
+
+            <td>
+            <fieldset>
+            <ul class="types">
+
+            <li><label><input type="checkbox" value="Guest Safety Barrier" name="interested" /> Guest safety barrier</label></li>
+            <li><label><input type="checkbox" value="Cashier Isolation Barrier" name="interested" /> Cashier isolation barrier</label></li>
+            <li><label><input type="checkbox" value="Pickup Area Shelter" name="interested" /> Pickup area shelter</label></li>
+            </ul></fieldset>
+            </td>
+
+
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;<td>
+
+
+            <td>
+            <fieldset>
+            <ul class="types">
+
+
+            <li><label><input type="checkbox" value="Employee Safety Shield" name="interested" /> Employee safety shield</label></li>
+            <li><label><input type="checkbox" value="Personal Office Divider" name="interested"  /> Personal office divider</label></li>
+            <li><label><input type="checkbox" value="Movable Partitions" name="interested" /> Movable partitions</label></li>
+
+
+          </ul></fieldset>
+          </td>
+            </tr></table>
+
+
+          </p>
+
+          <p> <fieldset>
+          <h4>Color choice</h4>
+
+          <table><tr>
+
+          <ul class="types">
+            <td>
+            <fieldset>
+            <ul class="types">
+
+            <li><label><input type="checkbox" value="Standard" name="color" /> Standard color</label></li>
+          </ul></fieldset>
+          </td>
+
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;<td>
+
+
+            <td>
+            <fieldset>
+            <ul class="types">
+
+            <li><label><input type="checkbox" value="Custom" name="color" /> Custom color</label></li>
+          </ul></fieldset>
+          </td>
+
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;<td>
+
+
+            <td>
+            <fieldset>
+            <ul class="types">
+
+            <li><label><input type="checkbox" value="Special" name="color" /> Special metallic finish or vein</label></li>
+          </ul></fieldset>
+          </td>
+
+          </tr></table>
+          </p>
+
+          <p>
+            <button id="checkForm" class="button" >Send</button>
+          </p>
+
+
+          <p>
+          <div id="captchaWidget" class="g-recaptcha"></div>
+          <span id="captchaDiv" style="margin-left:100px;color:red" />
+          </p>
+
+
+
+
+        </form>
+
+
+
+<h3> This is the end of my child template</h3>
+</div>
+
+
+<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+
+
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <script src="{{ url_for('static', filename='js/wkg.js') }}" charset="utf-8"></script>
+
+
+{% endblock %}
