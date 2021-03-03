@@ -51,6 +51,7 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/static/favicon.ico" rel="icon">
 
 
     <!-- Bootstrap CSS -->
@@ -58,9 +59,6 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/AboutMe.css') }}">
-
-    <!--- For Polaroid Close Button --->
-    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
 
     <!--- For Splide --->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
@@ -75,10 +73,6 @@
 
    <!-- Latest compiled JavaScript -->
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-
-    <!--- For Polaroid Close Button --->
-    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
     <!--- For Splide --->
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
@@ -898,7 +892,9 @@ body {
 		   let img = document.getElementById(imgID);
 
 		   currentOpenTravelImg = img
-		   currentOpenTravelImg.classList.add('dramatic')
+		   if (primarySlider.options.perPage > 1) {
+		      currentOpenTravelImg.classList.add('dramatic')
+		   }
 
            /*
 		   if (currentOpenTravelImg.classList.contains('dramatic')) {
@@ -907,7 +903,7 @@ body {
 		      console.log("move:  currentOpenTravelImg id " + currentOpenTravelImg.id + " DOES NOT contain class dramatic")
 		   }
 		   */
-
+           //console.log("move:  perPage = " + primarySlider.options.perPage + "; window.innerWidth = " + window.innerWidth)
 
 
 		}); // splide.on
@@ -925,6 +921,11 @@ body {
 		}, false);
 
 
+
+		window.addEventListener('resize', () => {
+		   handleResize(primarySlider)
+		   return () => window.removeEventListener("resize", handleResize,);
+		});
 
 
 
@@ -960,7 +961,9 @@ body {
 
 
 		        currentOpenTravelImg = img
-		        currentOpenTravelImg.classList.add('dramatic')
+		        if (primarySlider.options.perPage > 1) {
+		           currentOpenTravelImg.classList.add('dramatic')
+		        }
 
                 /*
 		        if (currentOpenTravelImg.classList.contains('dramatic')) {
@@ -969,6 +972,7 @@ body {
 		           console.log("travelButton:  currentOpenTravelImg id " + currentOpenTravelImg.id + " DOES NOT contain class dramatic")
 		        }
 		        */
+		        //console.log("travelButton:  perPage = " + primarySlider.options.perPage + "; window.innerWidth = " + window.innerWidth)
 			}
 
 
@@ -1016,16 +1020,14 @@ body {
 		   isSliderOpen=true
 		   document.getElementById("openSlider").style.display = 'none';
 
-
-
 		   let imgID ="polaroid_" + linkNumber.toString().padStart(2, 0);
 		   let img = document.getElementById(imgID);
 
 
 		   currentOpenTravelImg = img
-		   currentOpenTravelImg.classList.add('dramatic')
-
-
+		   if (primarySlider.options.perPage > 1) {
+		      currentOpenTravelImg.classList.add('dramatic')
+		   }
 
 
 		}; // document.getElementById('openSlider')
@@ -1120,6 +1122,25 @@ body {
    	}
 
 */
+
+   function handleResize(primarySlider) {
+     //console.log("window resize:  perPage = " + primarySlider.options.perPage)
+     if (primarySlider.options.perPage <= 1) {
+        if (currentOpenTravelImg) {
+           if (!currentOpenTravelImg.classList.contains('dramatic')) {
+              currentOpenTravelImg.classList.add('dramatic')
+           }
+        }
+     } else {
+        if (currentOpenTravelImg) {
+           if (currentOpenTravelImg.classList.contains('dramatic')) {
+              currentOpenTravelImg.classList.remove('dramatic')
+           }
+        }
+     }
+
+
+   }
 
 
 
